@@ -1,0 +1,26 @@
+Options -MultiViews 
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^tietoa/?$ /edarit.html
+
+RewriteRule ^/?$ /static_index.html
+
+RewriteRule ^edustaja/([^/\.]+)/?$ /list.php?source=$1 [L]
+RewriteRule ^edustaja/([^/\.]+)/([^/\.]+)/?$ /list.php?source=$1&start=$2 [L]
+
+RewriteRule ^puolue/([^/\.]+)/?$ /list.php?party=$1 [L]
+RewriteRule ^puolue/([^/\.]+)/([^/\.]+)/?$ /list.php?party=$1&start=$2 [L]
+
+RewriteRule ^puolueet/([^/\.]+)/?$ /parties.php?start=$1 [L]
+RewriteRule ^kaikki/([^/\.]+)/?$ /list.php?start=$1 [L]
+RewriteRule ^edustajat/([^/\.]+)/?$ /members.php?start=$1 [L]
+
+RewriteRule ^puolueet/?$ /parties.php [L]
+RewriteRule ^edustajat/?$ /members.php [L]
+RewriteRule ^kaikki/?$ /list.php [L]
+
+RewriteRule ^uudet/([^/\.]+)/?$ /list.php?unread=$1 [L]
+RewriteRule ^uudet/? /list.php?unread [L]
+
